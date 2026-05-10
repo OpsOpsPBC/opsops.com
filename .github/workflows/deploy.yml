@@ -200,7 +200,11 @@ jobs:
             echo "==> Pruning old releases (keeping ${KEEP_RELEASES})"
             ls -1dt "${DEPLOY_PATH}/releases"/*/ 2>/dev/null \
               | tail -n +$((KEEP_RELEASES + 1)) \
-              | xargs -r rm -rf
+              | while read -r OLD; do
+                  echo "  Pruning: $OLD"
+                  chmod -R u+w "$OLD" 2>/dev/null || true
+                  rm -rf "$OLD"
+                done
 
             rm -f /tmp/deploy.tar.gz
             echo "==> Deploy complete: $TIMESTAMP"
