@@ -1,0 +1,84 @@
+name: Deploy Drupal
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, xml, gd, curl, zip, intl
+          tools: composer:v2
+
+      - name: Cache Composer dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.composer/cache
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+
+      - name: Install dependencies
+        run: composer install --no-dev --optimize-autoloader --no-interaction
+
+      - name: Create deployment archive
+        run: tar -czf deploy.tar.gz --exclude='.git' --exclude='node_modules' .
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: deploy-bundle
+          path: deploy.tar.gz
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: deploy-bundle
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Copy bundle to server
+        run: |
+          scp -i ~/.ssh/id_ed25519 deploy.tar.gz \
+            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/tmp/deploy.tar.gz
+
+      - name: Deploy on server
+        run: |
+          ssh -i ~/.ssh/id_ed25519 ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} bash << 'EOF'
+            set -e
+            RELEASE="/var/www/releases/$(date +%Y%m%d%H%M%S)"
+            mkdir -p "$RELEASE"
+            tar -xzf /tmp/deploy.tar.gz -C "$RELEASE"
+
+            # Preserve persistent files
+            ln -sfn /var/www/shared/files "$RELEASE/web/sites/default/files"
+            ln -sfn /var/www/shared/settings.php "$RELEASE/web/sites/default/settings.php"
+
+            # Atomic switch
+            ln -sfn "$RELEASE" /var/www/drupal_current
+            
+            # Run database updates and clear cache
+            cd "$RELEASE"
+            ./vendor/bin/drush updatedb -y
+            ./vendor/bin/drush cim -y || true   # Import config if present
+            ./vendor/bin/drush cr
+
+            # Cleanup: keep only last 5 releases
+            ls -1dt /var/www/releases/* | tail -n +6 | xargs -r rm -rf
+            rm /tmp/deploy.tar.gz
+          EOF
