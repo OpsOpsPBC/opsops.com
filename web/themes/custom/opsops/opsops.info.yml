@@ -1,0 +1,27 @@
+name: opsops
+type: theme
+'base theme': stable9
+version: 1.0.0
+libraries:
+  - opsops/base
+  - opsops/messages
+  - opsops/global-styling
+  - core/normalize
+libraries-extend:
+  user/drupal.user:
+    - opsops/user
+  core/drupal.dropbutton:
+    - opsops/dropbutton
+  core/drupal.dialog:
+    - opsops/dialog
+  file/drupal.file:
+    - opsops/file
+  core/drupal.item-list:
+    - opsops/item-list
+  core/drupal.progress:
+    - opsops/progress
+  core/drupal.tablesort:
+    - opsops/drupal.tablesort
+description: ''
+core_version_requirement: ^11
+generator: 'starterkit_theme:11.3.8'
