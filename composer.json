@@ -117,6 +117,9 @@
             "drupal/site_template_helper": true,
             "php-http/discovery": true
         },
+        "platform":{
+            "php": "8.4.0"
+        },
         "bin-dir": "vendor/bin",
         "sort-packages": true,
         "optimize-autoloader": true
