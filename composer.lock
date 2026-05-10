@@ -13851,7 +13851,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "drupal/drupal_cms_site_template_base": 20,
         "drupal/webform": 10
     },
     "prefer-stable": true,
