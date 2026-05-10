@@ -4,7 +4,7 @@ first_day: 0
 country:
   default: null
 timezone:
-  default: America/Los_Angeles
+  default: UTC
   user:
     configurable: true
     default: 0

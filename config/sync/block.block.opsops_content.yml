@@ -1,0 +1,22 @@
+uuid: a5bcbdec-6205-43a0-aa87-ea6be9e7fa2b
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - opsops
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: opsops_content
+theme: opsops
+region: content
+weight: -2
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

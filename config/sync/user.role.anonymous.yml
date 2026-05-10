@@ -1,18 +1,22 @@
-uuid: 67640d38-fa9e-44a4-b409-ead0dcff4a71
+uuid: 8ac424d9-1578-41e1-bb3c-e51fe317426e
 langcode: en
 status: true
 dependencies:
+  config:
+    - filter.format.restricted_html
   module:
-    - klaro
-    - media
+    - comment
+    - filter
+    - search
     - system
 _core:
-  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
+  default_config_hash: xLG41YbRo2NP-0SgRNTkMzLEuaeibanGXgUTbdIcIIg
 id: anonymous
 label: 'Anonymous user'
 weight: 0
 is_admin: false
 permissions:
+  - 'access comments'
   - 'access content'
-  - 'use klaro'
-  - 'view media'
+  - 'search content'
+  - 'use text format restricted_html'

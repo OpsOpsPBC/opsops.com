@@ -1,0 +1,23 @@
+uuid: e64c36f0-f959-49c4-ae5d-e5167800e64b
+langcode: en
+status: false
+dependencies:
+  module:
+    - search
+  theme:
+    - opsops
+_core:
+  default_config_hash: pbbed0hdqGDF-_QWVVTWRAwgDIotFuAvWH5mWUZu0fA
+id: opsops_search_form_wide
+theme: opsops
+region: secondary_menu
+weight: -5
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form (wide)'
+  label_display: '0'
+  provider: search
+  page_id: null
+visibility: {  }

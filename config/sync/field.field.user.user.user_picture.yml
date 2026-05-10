@@ -1,4 +1,4 @@
-uuid: 8d019585-3679-4420-a7c9-025b02248ba0
+uuid: 3202526f-2fd7-4b22-a0b7-f93d0027451d
 langcode: en
 status: true
 dependencies:
@@ -22,17 +22,17 @@ default_value_callback: ''
 settings:
   handler: 'default:file'
   handler_settings: {  }
-  file_directory: avatars
+  file_directory: 'pictures/[date:custom:Y]-[date:custom:m]'
   file_extensions: 'png gif jpg jpeg webp'
   max_filesize: ''
   max_resolution: ''
-  min_resolution: 72x72
+  min_resolution: ''
   alt_field: false
   alt_field_required: false
   title_field: false
   title_field_required: false
   default_image:
-    uuid: abcfbf7d-0cf1-4e24-b361-30bb3f7e5b39
+    uuid: null
     alt: ''
     title: ''
     width: null

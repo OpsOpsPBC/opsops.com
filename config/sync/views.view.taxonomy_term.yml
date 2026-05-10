@@ -1,16 +1,16 @@
-uuid: 5b4c2ea3-ab9b-4621-a139-7d47ab7d299b
+uuid: 6da043b3-7665-4726-b918-f934c31dba39
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.card
     - core.entity_view_mode.node.rss
+    - core.entity_view_mode.node.teaser
   module:
     - node
     - taxonomy
     - user
 _core:
-  default_config_hash: A-7Q8NtI8oyOVw_Q_y44PIHCd4yuctGVxI7YrH2zOW0
+  default_config_hash: 3o-ZjKjvMBpgaHiS3k8RvejhwJB4yX81fbjQjWc-tC8
 id: taxonomy_term
 label: 'Taxonomy term'
 module: taxonomy
@@ -223,8 +223,7 @@ display:
       row:
         type: 'entity:node'
         options:
-          relationship: none
-          view_mode: card
+          view_mode: teaser
       query:
         type: views_query
         options:

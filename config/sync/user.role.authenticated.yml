@@ -1,34 +1,28 @@
-uuid: 7c3d6023-4faa-43ac-8013-26ccc504e776
+uuid: 57e75a3f-d99e-4ad0-8622-c407c6c80780
 langcode: en
 status: true
 dependencies:
+  config:
+    - filter.format.basic_html
   module:
-    - captcha
-    - coffee
-    - contextual
+    - comment
     - file
-    - honeypot
-    - klaro
-    - media
-    - navigation
-    - node
+    - filter
+    - search
+    - shortcut
     - system
 _core:
-  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+  default_config_hash: hcfESiA8tr3D1muRk2KF7tbcun16ZJlG1R5SzKGed6g
 id: authenticated
 label: 'Authenticated user'
 weight: 1
 is_admin: false
 permissions:
-  - 'access administration pages'
-  - 'access coffee'
+  - 'access comments'
   - 'access content'
-  - 'access contextual links'
-  - 'access navigation'
-  - 'bypass honeypot protection'
+  - 'access shortcuts'
   - 'delete own files'
-  - 'skip CAPTCHA'
-  - 'use klaro'
-  - 'view media'
-  - 'view own unpublished content'
-  - 'view the administration theme'
+  - 'post comments'
+  - 'search content'
+  - 'skip comment approval'
+  - 'use text format basic_html'

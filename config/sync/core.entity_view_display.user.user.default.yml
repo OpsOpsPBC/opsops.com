@@ -1,4 +1,4 @@
-uuid: 4d9f9c78-bc7b-4e95-b488-ab4c143d0f79
+uuid: c7655bb2-d1a5-4cbe-b6e2-fb4f9522e79f
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
-    - svg_image
+    - image
     - user
 _core:
   default_config_hash: mZLyuWM9CQx2ZJVqFGSbzgFnHzudVbHBYmdU256A5Wk
@@ -22,14 +22,10 @@ content:
     type: image
     label: hidden
     settings:
-      image_link: content
       image_style: thumbnail
+      image_link: content
       image_loading:
         attribute: lazy
-      svg_attributes:
-        width: 72
-        height: 72
-      svg_render_as_image: false
     third_party_settings: {  }
     weight: 0
     region: content

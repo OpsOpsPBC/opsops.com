@@ -1,29 +1,13 @@
-uuid: 9dfe4efe-f2f7-40b8-8a6a-b483f825a47c
+uuid: 4bc8a827-5947-49e4-8d12-aa43c2301615
 langcode: en
 status: true
-dependencies:
-  module:
-    - scheduler
-third_party_settings:
-  scheduler:
-    expand_fieldset: when_required
-    fields_display_mode: vertical_tab
-    publish_enable: true
-    publish_past_date: error
-    publish_past_date_created: false
-    publish_required: false
-    publish_revision: true
-    publish_touch: true
-    show_message_after_update: true
-    unpublish_enable: true
-    unpublish_required: false
-    unpublish_revision: true
+dependencies: {  }
 _core:
-  default_config_hash: Dd_UIheMYCyUSYpcYZ23-hLtWuOcpDJ7H42ddcw68sI
-name: 'Utility page'
+  default_config_hash: i0snV8Wj--OkRW12UdachUiYiz3FbeMwHu_pZYfzKLc
+name: 'Basic page'
 type: page
-description: "Use <em>utility page</em> for your static content, such as a 'Privacy policy' page."
+description: "Use <em>basic pages</em> for your static content, such as an 'About us' page."
 help: null
 new_revision: true
-preview_mode: 0
+preview_mode: 1
 display_submitted: false

@@ -1,0 +1,20 @@
+uuid: 5cdd0971-06d3-4766-a786-5aa1b8d4476e
+langcode: en
+status: true
+dependencies:
+  theme:
+    - opsops
+_core:
+  default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
+id: opsops_primary_admin_actions
+theme: opsops
+region: content
+weight: -1
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }
