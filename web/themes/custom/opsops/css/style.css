@@ -57,6 +57,7 @@ main {
 .site-name a {
 	font-size: 1rem;
 	text-decoration: none;
+	position: relative;
 }
 
 .site-name a:before {
