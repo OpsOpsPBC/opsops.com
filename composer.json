@@ -96,10 +96,8 @@
         "drupal/views_infinite_scroll": "^2.0.3",
         "drupal/webform": "^6.3.0-beta8",
         "drupal/yoast_seo": "^2.2.0",
+        "drush/drush": "^13.7",
         "league/commonmark": "^2.4"
-    },
-    "require-dev": {
-        "drush/drush": "^13.7"
     },
     "conflict": {
         "drupal/drupal": "*"
