@@ -14,7 +14,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.3'
+          php-version: '8.4'
           extensions: mbstring, xml, gd, curl, zip, intl
           tools: composer:v2
 
@@ -26,15 +26,24 @@ jobs:
 
       - name: Install dependencies
         run: composer install --no-dev --optimize-autoloader --no-interaction
-
+      
       - name: Create deployment archive
-        run: tar -czf /tmp/deploy.tar.gz --exclude='.git' --exclude='node_modules' .
+        run: |
+          tar -czf /tmp/deploy.tar.gz \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='node_modules' \
+            --exclude='./web/sites/default/files' \
+            --exclude='./web/sites/default/settings.local.php' \
+            --exclude='.env' \
+            --exclude='tests' \
+            .
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: deploy-bundle
-          path: deploy.tar.gz
+          path: /tmp/deploy.tar.gz
 
   deploy:
     needs: build
