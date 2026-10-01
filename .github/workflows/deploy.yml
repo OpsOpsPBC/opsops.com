@@ -33,7 +33,7 @@ jobs:
       - name: Cache Composer dependencies
         uses: actions/cache@v4
         with:
-          path: ~/.composer/cache
+          path: ~/.cache/composer
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
           restore-keys: ${{ runner.os }}-composer-
 
@@ -46,14 +46,14 @@ jobs:
       - name: Create deployment archive
         run: |
           tar -czf /tmp/deploy.tar.gz \
-            --exclude='./.git' \
-            --exclude='./.github' \
-            --exclude='./node_modules' \
-            --exclude='./tests' \
-            --exclude='./web/sites/default/files' \
-            --exclude='./web/sites/default/settings.php' \
-            --exclude='./web/sites/default/settings.local.php' \
-            --exclude='.env' \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='node_modules' \
+            --exclude='tests' \
+            --exclude='web/sites/default/files' \
+            --exclude='web/sites/default/settings.php' \
+            --exclude='web/sites/default/settings.local.php' \
+            --exclude='.env*' \
             .
           ls -lh /tmp/deploy.tar.gz
 
@@ -161,21 +161,25 @@ jobs:
             KEEP_RELEASES="$KEEP_RELEASES" \
             'bash -se' << 'EOF'
             set -euo pipefail
+            trap 'rm -f /tmp/deploy.tar.gz' EXIT
 
             TIMESTAMP="$(date +%Y%m%d%H%M%S)"
             RELEASE="${DEPLOY_PATH}/releases/${TIMESTAMP}"
             CURRENT="${DEPLOY_PATH}/drupal_current"
             SHARED="${DEPLOY_PATH}/shared"
+            BACKUPS="${DEPLOY_PATH}/backups"
 
-            echo "==> Creating release: $RELEASE"
-            mkdir -p "$RELEASE"
+            mkdir -p "$RELEASE" "$SHARED/files" "$BACKUPS"
+            echo "==> Extracting release: $RELEASE"
             tar -xzf /tmp/deploy.tar.gz -C "$RELEASE"
 
             echo "==> Linking shared resources"
-            ln -sfn "$SHARED/files"        "$RELEASE/web/sites/default/files"
+            rm -rf "$RELEASE/web/sites/default/files"
+            ln -sfn "$SHARED/files" "$RELEASE/web/sites/default/files"
+
+            rm -f "$RELEASE/web/sites/default/settings.php"
             ln -sfn "$SHARED/settings.php" "$RELEASE/web/sites/default/settings.php"
 
-            # Capture previous release for rollback
             PREVIOUS=""
             if [ -L "$CURRENT" ]; then
               PREVIOUS="$(readlink -f "$CURRENT")"
@@ -184,33 +188,38 @@ jobs:
             echo "==> Switching symlink"
             ln -sfn "$RELEASE" "$CURRENT"
 
-            echo "==> Running database updates and config import"
-            cd "$RELEASE"
-            if ! ./vendor/bin/drush updatedb -y; then
-              echo "::error::updatedb failed — rolling back"
-              [ -n "$PREVIOUS" ] && ln -sfn "$PREVIOUS" "$CURRENT"
-              exit 1
+            echo "==> Creating pre-deploy database backup"
+            if [ -n "$PREVIOUS" ] && [ -f "$PREVIOUS/vendor/bin/drush" ]; then
+              "$PREVIOUS/vendor/bin/drush" sql:dump --gzip --result-file="${BACKUPS}/db_${TIMESTAMP}.sql" || true
             fi
-            if ! ./vendor/bin/drush cim -y; then
-              echo "::error::config import failed — rolling back"
-              [ -n "$PREVIOUS" ] && ln -sfn "$PREVIOUS" "$CURRENT"
-              exit 1
-            fi
-            ./vendor/bin/drush cr
 
-            echo "==> Reloading PHP-FPM (clears OPcache)"
+            echo "==> Running Drush deployment commands"
+            cd "$RELEASE"
+            if ! ./vendor/bin/drush deploy -y -v; then
+              echo "::error::drush deploy failed — rolling back code symlink"
+              if [ -n "$PREVIOUS" ]; then
+                ln -sfn "$PREVIOUS" "$CURRENT"
+                ./vendor/bin/drush cr 2>/dev/null || true
+              fi
+              exit 1
+            fi
+
+            echo "==> Reloading PHP-FPM"
             sudo systemctl reload "php${PHP_VERSION}-fpm"
 
-            echo "==> Pruning old releases (keeping ${KEEP_RELEASES})"
+            echo "==> Pruning old releases and backups (keeping ${KEEP_RELEASES})"
             ls -1dt "${DEPLOY_PATH}/releases"/*/ 2>/dev/null \
               | tail -n +$((KEEP_RELEASES + 1)) \
               | while read -r OLD; do
-                  echo "  Pruning: $OLD"
+                  echo "  Pruning release: $OLD"
                   chmod -R u+w "$OLD" 2>/dev/null || true
                   rm -rf "$OLD"
                 done
 
-            rm -f /tmp/deploy.tar.gz
+            ls -1dt "${BACKUPS}"/db_*.sql.gz 2>/dev/null \
+              | tail -n +$((KEEP_RELEASES + 1)) \
+              | xargs -r rm -f
+
             echo "==> Deploy complete: $TIMESTAMP"
           EOF
 
