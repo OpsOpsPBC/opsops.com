@@ -180,6 +180,10 @@ jobs:
             rm -f "$RELEASE/web/sites/default/settings.php"
             ln -sfn "$SHARED/settings.php" "$RELEASE/web/sites/default/settings.php"
 
+            echo "==> Ensuring config directory permissions"
+            mkdir -p "$RELEASE/config/sync"
+            chmod -R 775 "$RELEASE/config/sync"
+
             PREVIOUS=""
             if [ -L "$CURRENT" ]; then
               PREVIOUS="$(readlink -f "$CURRENT")"
