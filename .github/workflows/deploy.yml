@@ -191,7 +191,11 @@ jobs:
               [ -n "$PREVIOUS" ] && ln -sfn "$PREVIOUS" "$CURRENT"
               exit 1
             fi
-            ./vendor/bin/drush cim -y || true
+            if ! ./vendor/bin/drush cim -y; then
+              echo "::error::config import failed — rolling back"
+              [ -n "$PREVIOUS" ] && ln -sfn "$PREVIOUS" "$CURRENT"
+              exit 1
+            fi
             ./vendor/bin/drush cr
 
             echo "==> Reloading PHP-FPM (clears OPcache)"
