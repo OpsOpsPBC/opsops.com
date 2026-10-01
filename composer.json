@@ -40,7 +40,7 @@
         "drupal/core-recommended": "^11.3",
         "drupal/core-vendor-hardening": "^11.3",
         "drupal/crop": "^2.6.0",
-        "drupal/cva": "^1.0.0",
+        "drupal/cva": "^1.0",
         "drupal/dashboard": "^2.2.0",
         "drupal/drupal_cms_helper": "^2",
         "drupal/drupal_cms_installer": "^2",

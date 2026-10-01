@@ -1,0 +1,22 @@
+uuid: 75a1fa40-c49c-4fc8-900d-d440043bf79c
+langcode: en
+status: true
+dependencies:
+  theme:
+    - mercury
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: mercury_primary_local_tasks
+theme: mercury
+region: content
+weight: -5
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }
