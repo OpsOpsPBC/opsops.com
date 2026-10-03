@@ -1,0 +1,102 @@
+uuid: 3157cc3f-67e1-408f-9fa4-d5f7def97d65
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+  theme:
+    - forma_theme
+_core:
+  default_config_hash: nx5rgcxRDsftsLUDVaVBzf9l-316Cc6tsZaoW2xjh5c
+active_version: bfd703095b65f975
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        eyebrow_text:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Eyebrow label'
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        text_color:
+          required: true
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: default
+          expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
+    fallback_metadata:
+      slot_definitions: {  }
+  96499623bd377e86:
+    settings:
+      prop_field_definitions:
+        eyebrow_text:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Eyebrow label'
+          expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
+        text_color:
+          required: true
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: default
+          expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
+    fallback_metadata:
+      slot_definitions: {  }
+  0fe9df4e24bf755f:
+    settings:
+      prop_field_definitions:
+        label:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: Eyebrow
+          expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
+        style:
+          required: true
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: foreground
+          expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
+    fallback_metadata:
+      slot_definitions: {  }
+label: Eyebrow
+id: sdc.forma_theme.eyebrow
+provider: forma_theme
+source: sdc
+source_local_id: 'forma_theme:eyebrow'

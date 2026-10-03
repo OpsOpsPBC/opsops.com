@@ -1,0 +1,32 @@
+uuid: de4956dd-7597-4cc3-a768-fb53336c68ab
+langcode: en
+status: true
+dependencies:
+  theme:
+    - forma_theme
+_core:
+  default_config_hash: cMX4CZ4aFSHJIj4iDJP1hcDLkZYLyMDhU2oOKTl7AZQ
+active_version: '5524813695409257'
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        id:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: anchor-id
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+    fallback_metadata:
+      slot_definitions: {  }
+label: Anchor
+id: sdc.forma_theme.anchor
+provider: forma_theme
+source: sdc
+source_local_id: 'forma_theme:anchor'

@@ -1,0 +1,25 @@
+uuid: 6be83167-f6f8-45d3-b000-de7919fb3e8a
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Pi8VIUZ6ALFD4tAtFDfSDWD47xBK5TSP7gJxHREEwNg
+id: user_blocked
+label: 'User: Account Blocked'
+module: user
+key: status_blocked
+easy_email_type: user_blocked
+param_map:
+  -
+    source: account
+    destination: recipient_uid
+copied_fields:
+  from: false
+  reply_to: false
+  to: false
+  cc: false
+  bcc: false
+  subject: false
+  body_html: false
+  body_plain: false
+  attachments: false

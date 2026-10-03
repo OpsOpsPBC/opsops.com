@@ -1,0 +1,17 @@
+uuid: 67770024-5107-4362-ab53-f3a798543423
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.forma_theme.card
+    - canvas.component.sdc.forma_theme.card-article
+    - canvas.component.sdc.forma_theme.card-logo
+    - canvas.component.sdc.forma_theme.card-testimonial
+name: Card
+configEntityTypeId: component
+weight: 0
+items:
+  - sdc.forma_theme.card
+  - sdc.forma_theme.card-article
+  - sdc.forma_theme.card-logo
+  - sdc.forma_theme.card-testimonial

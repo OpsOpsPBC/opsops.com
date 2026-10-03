@@ -1,0 +1,21 @@
+uuid: 9770a049-e81c-4498-a75b-20b174998b5c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_seo_description
+    - node.type.article
+_core:
+  default_config_hash: PRLOFy_jYov3Xn116fkDYRz-BZuM1Oq8wG90ys_B0Lc
+id: node.article.field_seo_description
+field_name: field_seo_description
+entity_type: node
+bundle: article
+label: 'SEO description'
+description: 'Write a description for search engines and social media sites.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

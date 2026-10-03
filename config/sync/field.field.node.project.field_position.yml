@@ -1,0 +1,21 @@
+uuid: 5c5ddef9-31e4-4853-b5ae-f9f41cf79cc5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_position
+    - node.type.project
+_core:
+  default_config_hash: fKfDXyYTLLzB48l1qFuKQMgEqcIw9vB3wPlzMUBL4ss
+id: node.project.field_position
+field_name: field_position
+entity_type: node
+bundle: project
+label: Position
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
