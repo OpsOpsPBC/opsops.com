@@ -1,55 +1,57 @@
-uuid: 79394a09-0b42-4e14-b27e-ab9bf8066057
+uuid: caa23a44-4bd1-4fdb-b40d-09f2285c8bac
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.article.body
-    - field.field.node.article.comment
-    - field.field.node.article.field_image
-    - field.field.node.article.field_tags
-    - image.style.medium
+    - field.field.node.article.field_author
+    - field.field.node.article.field_content
+    - field.field.node.article.field_description
+    - field.field.node.article.field_featured_image
+    - field.field.node.article.field_seo_analysis
+    - field.field.node.article.field_seo_description
+    - field.field.node.article.field_seo_image
+    - field.field.node.article.field_seo_title
     - node.type.article
   module:
-    - image
-    - text
     - user
 _core:
-  default_config_hash: O8PxzfG8DOHHRu6M23kwR6TDPq_MNfYQ10Mp367ICUQ
+  default_config_hash: hFZ4TF0fMd7wuT2H01hrIgpvlF9WoI7cD8MtrLWYztU
 id: node.article.teaser
 targetEntityType: node
 bundle: article
 mode: teaser
 content:
-  body:
-    type: text_summary_or_trimmed
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  field_description:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_featured_image:
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      trim_length: 600
+      view_mode: 4_3_medium
+      link: false
     third_party_settings: {  }
     weight: 0
     region: content
-  field_image:
-    type: image
-    label: hidden
-    settings:
-      image_link: content
-      image_style: medium
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: -1
-    region: content
-  field_tags:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 10
-    region: content
   links:
+    settings: {  }
+    third_party_settings: {  }
     weight: 100
     region: content
 hidden:
-  comment: true
+  field_author: true
+  field_content: true
+  field_seo_analysis: true
+  field_seo_description: true
+  field_seo_image: true
+  field_seo_title: true

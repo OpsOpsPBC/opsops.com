@@ -1,0 +1,925 @@
+recipe: Forma
+config:
+  -
+    name: canvas.component.block.system_menu_block.social
+    data:
+      label: 'Social links'
+      versioned_properties:
+        active:
+          settings:
+            default_settings:
+              label: 'Social links'
+  -
+    name: canvas.component.block.views_block.articles-articles_all
+    data:
+      label: Articles
+      versioned_properties:
+        active:
+          settings:
+            default_settings:
+              label: Articles
+  -
+    name: canvas.component.block.views_block.articles-articles_latest
+    data:
+      label: Articles
+      versioned_properties:
+        active:
+          settings:
+            default_settings:
+              label: Articles
+  -
+    name: canvas.component.block.views_block.projects-projects_all
+    data:
+      label: Projects
+      versioned_properties:
+        active:
+          settings:
+            default_settings:
+              label: Projects
+  -
+    name: canvas.component.block.views_block.projects-projects_latest
+    data:
+      label: Projects
+      versioned_properties:
+        active:
+          settings:
+            default_settings:
+              label: Projects
+  -
+    name: canvas.component.sdc.forma_theme.accordion-container
+    data:
+      label: 'Accordion container'
+      versioned_properties:
+        active:
+          fallback_metadata:
+            slot_definitions:
+              accordion_content:
+                title: 'Accordion content'
+                description: 'Only one of collapsible sections added can be open at a time.'
+  -
+    name: canvas.component.sdc.forma_theme.accordion
+    data:
+      label: Accordion
+      versioned_properties:
+        active:
+          settings:
+            prop_field_definitions:
+              title:
+                default_value:
+                  -
+                    value: 'Section title'
+          fallback_metadata:
+            slot_definitions:
+              accordion_content:
+                title: 'Accordion content'
+                description: 'Content in this slot will be hidden when the accordion is collapsed.'
+        f7c9de71b7d861bb:
+          fallback_metadata:
+            slot_definitions:
+              accordion_content:
+                title: 'Accordion content'
+                description: 'Content in this slot will be hidden when the accordion is collapsed.'
+  -
+    name: canvas.component.sdc.forma_theme.anchor
+    data:
+      label: Anchor
+      versioned_properties:
+        active:
+          settings:
+            prop_field_definitions:
+              id:
+                default_value:
+                  -
+                    value: anchor-id
+  -
+    name: canvas.component.sdc.forma_theme.badge
+    data:
+      label: Badge
+      versioned_properties:
+        active:
+          settings:
+            prop_field_definitions:
+              label:
+                default_value:
+                  -
+                    value: 'Badge text'
+              icon:
+                default_value:
+                  -
+                    value: rocket
+  -
+    name: canvas.component.sdc.forma_theme.blockquote
+    data:
+      versioned_properties:
+        active:
+          settings:
+            prop_field_definitions:
+              text:
+                default_value:
+                  -
+                    value: '<p>"Working with Forma Agency was a dream. They truly captured the essence of our brand and brought it to life!"</p>'
+              cite_name:
+                default_value:
+                  -
+                    value: Thando
+              cite_text:
+                default_value:
+                  -
+                    value: 'CEO of Evano'
+      label: Blockquote
+  -
+    name: canvas.component.sdc.forma_theme.button
+    data:
+      versioned_properties:
+        active:
+          settings:
+            prop_field_definitions:
+              label:
+                default_value:
+                  -
+                    value: 'Button label'
+      label: Button
+  -
+    name: canvas.component.sdc.forma_theme.card-article
+    data:
+      versioned_properties:
+        active:
+          settings:
+            prop_field_definitions:
+              heading_text:
+                default_value:
+                  -
+                    value: 'How to Choose a Cohesive Color Palette for Open-Plan Living Spaces'
+              author:
+                default_value:
+                  -
+                    value: 'Amanda Hayes'
+              link_label:
+                default_value:
+                  -
+                    value: 'Read article'
+      label: 'Card Article'
+  -
+    name: canvas.component.sdc.forma_theme.card-logo
+    data:
+      label: 'Logo card'
+  -
+    name: canvas.component.sdc.forma_theme.card-testimonial
+    data:
+      versioned_properties:
+        active:
+          settings:
+            prop_field_definitions:
+              text:
+                default_value:
+                  -
+                    value: "Forma didn't just redesign our brand — they helped us understand who we are as a company. Their team took the time to dig into our values, our customers, and our goals, and what came out the other side was a brand identity that genuinely feels like us. "
+              cite_name:
+                default_value:
+                  -
+                    value: 'James Stroman'
+              cite_text:
+                default_value:
+                  -
+                    value: 'Head of Branding'
+      label: 'Testimonial card'
+  -
+    name: canvas.component.sdc.forma_theme.card
+    data:
+      versioned_properties:
+        active:
+          settings:
+            prop_field_definitions:
+              index:
+                default_value:
+                  -
+                    value: '01'
+              heading_text:
+                default_value:
+                  -
+                    value: 'This is your card title'
+              text:
+                default_value:
+                  -
+                    value: 'Quaerat laborum rerum dolores dolores dolor qui.'
+      label: Card
+  -
+    name: canvas.component.sdc.forma_theme.cta
+    data:
+      label: 'Hero CTA'
+      versioned_properties:
+        active:
+          settings:
+            prop_field_definitions:
+              heading:
+                default_value:
+                  -
+                    value: '<h2>Your heading goes here</h2>'
+              text:
+                default_value:
+                  -
+                    value: '<p>Lorem ipsum dolor sit amet.</p>'
+          fallback_metadata:
+            slot_definitions:
+              actions:
+                title: Buttons
+        19020c05e6e7d6e4:
+          fallback_metadata:
+            slot_definitions:
+              actions:
+                title: Buttons
+        0e174579f48fd67f:
+          fallback_metadata:
+            slot_definitions:
+              actions:
+                title: Buttons
+        2d80aa2fc2b07a2d:
+          fallback_metadata:
+            slot_definitions:
+              actions:
+                title: Buttons
+        e5ca5548ae9d7768:
+          fallback_metadata:
+            slot_definitions:
+              actions:
+                title: Buttons
+        2af322e1c2f5b2c5:
+          fallback_metadata:
+            slot_definitions:
+              actions:
+                title: Content
+        39f6bbf5d13fb012:
+          fallback_metadata:
+            slot_definitions:
+              actions:
+                title: Buttons
+        3e24fb49e950d1db:
+          fallback_metadata:
+            slot_definitions:
+              actions:
+                title: Buttons
+  -
+    name: canvas.component.sdc.forma_theme.divider
+    data:
+      label: Divider
+  -
+    name: canvas.component.sdc.forma_theme.eyebrow
+    data:
+      label: Eyebrow
+      versioned_properties:
+        active:
+          settings:
+            prop_field_definitions:
+              eyebrow_text:
+                default_value:
+                  -
+                    value: 'Eyebrow label'
+  -
+    name: canvas.component.sdc.forma_theme.footer
+    data:
+      versioned_properties:
+        active:
+          fallback_metadata:
+            slot_definitions:
+              footer_first:
+                title: 'Column 1'
+              footer_second:
+                title: 'Column 2'
+              footer_third:
+                title: 'Column 3'
+        9363930709cf22bc:
+          fallback_metadata:
+            slot_definitions:
+              footer_first:
+                title: 'Column 1'
+              footer_second:
+                title: 'Column 2'
+              footer_third:
+                title: 'Column 3'
+              footer_last:
+                title: 'Column 4'
+              footer_utility_first:
+                title: 'Utility links'
+              footer_utility_last:
+                title: 'Copyright text'
+        5349e604659c6e33:
+          fallback_metadata:
+            slot_definitions:
+              footer_first:
+                title: 'Column 1'
+              footer_second:
+                title: 'Column 2'
+              footer_third:
+                title: 'Column 3'
+              footer_last:
+                title: 'Column 4'
+              footer_utility_first:
+                title: 'Utility links'
+              footer_utility_last:
+                title: 'Copyright text'
+        d696cea1796b650e:
+          fallback_metadata:
+            slot_definitions:
+              footer_first:
+                title: 'Branding & Social'
+              footer_last:
+                title: 'Call to action'
+              footer_utility_first:
+                title: 'Utility links'
+              footer_utility_last:
+                title: 'Copyright text'
+      label: Footer
+  -
+    name: canvas.component.sdc.forma_theme.grid
+    data:
+      versioned_properties:
+        active:
+          fallback_metadata:
+            slot_definitions:
+              main_slot:
+                title: Grid
+        9a7602c154ff7936:
+          fallback_metadata:
+            slot_definitions:
+              main_slot:
+                title: Grid
+        878dd02389d60223:
+          fallback_metadata:
+            slot_definitions:
+              main_slot:
+                title: Grid
+        aa1e746cb15d0a93:
+          fallback_metadata:
+            slot_definitions:
+              main_slot:
+                title: Grid
+        d3e0565623935449:
+          fallback_metadata:
+            slot_definitions:
+              main_slot:
+                title: Grid
+      label: Grid
+  -
+    name: canvas.component.sdc.forma_theme.group
+    data:
+      label: Group
+      versioned_properties:
+        active:
+          fallback_metadata:
+            slot_definitions:
+              group_slot:
+                title: 'Group items'
+        e1bfe70f9891a77d:
+          fallback_metadata:
+            slot_definitions:
+              group_slot:
+                title: 'Group items'
+        a9e11591ea50d621:
+          fallback_metadata:
+            slot_definitions:
+              group_slot:
+                title: 'Group items'
+        abbcb3d90ed9f57d:
+          fallback_metadata:
+            slot_definitions:
+              group_slot:
+                title: 'Group items'
+        cc0c1d944ff0d855:
+          fallback_metadata:
+            slot_definitions:
+              group_slot:
+                title: 'Group items'
+        5b8517841c0015ea:
+          fallback_metadata:
+            slot_definitions:
+              group_slot:
+                title: 'Group items'
+  -
+    name: canvas.component.sdc.forma_theme.heading
+    data:
+      label: Heading
+      versioned_properties:
+        active:
+          settings:
+            prop_field_definitions:
+              heading_text:
+                default_value:
+                  -
+                    value: 'Your heading goes here'
+  -
+    name: canvas.component.sdc.forma_theme.hero-billboard
+    data:
+      versioned_properties:
+        active:
+          fallback_metadata:
+            slot_definitions:
+              hero_slot:
+                title: 'Hero content'
+        35d1113a380839b8:
+          fallback_metadata:
+            slot_definitions:
+              hero_slot:
+                title: 'Hero content'
+        99a5cd08296cadad:
+          fallback_metadata:
+            slot_definitions:
+              hero_slot:
+                title: 'Hero content'
+        69e1345b50b2f63c:
+          fallback_metadata:
+            slot_definitions:
+              hero_slot:
+                title: 'Hero content'
+      label: 'Hero billboard'
+  -
+    name: canvas.component.sdc.forma_theme.hero-side-by-side
+    data:
+      versioned_properties:
+        active:
+          fallback_metadata:
+            slot_definitions:
+              hero_slot:
+                title: Content
+        7aaaed1240338976:
+          fallback_metadata:
+            slot_definitions:
+              hero_slot:
+                title: Content
+        89b020599a2cb85d:
+          fallback_metadata:
+            slot_definitions:
+              hero_slot:
+                title: Content
+        0941762a893f23bb:
+          fallback_metadata:
+            slot_definitions:
+              hero_slot:
+                title: Content
+        16eecce657ff7771:
+          fallback_metadata:
+            slot_definitions:
+              hero_slot:
+                title: Content
+        dc7e508a13ec0d05:
+          fallback_metadata:
+            slot_definitions:
+              hero_slot:
+                title: Content
+        134543b92be69eb8:
+          fallback_metadata:
+            slot_definitions:
+              hero_slot:
+                title: Content
+      label: 'Hero side-by-side'
+  -
+    name: canvas.component.sdc.forma_theme.icon
+    data:
+      label: Icon
+      versioned_properties:
+        active:
+          settings:
+            prop_field_definitions:
+              icon:
+                default_value:
+                  -
+                    value: rocket
+  -
+    name: canvas.component.sdc.forma_theme.image-split-section
+    data:
+      label: 'Image with split color background'
+  -
+    name: canvas.component.sdc.forma_theme.image
+    data:
+      label: Image
+  -
+    name: canvas.component.sdc.forma_theme.navbar
+    data:
+      versioned_properties:
+        active:
+          fallback_metadata:
+            slot_definitions:
+              logo:
+                title: 'Site logo'
+              navigation:
+                title: 'Navigation menu'
+              links:
+                title: 'Social links'
+        4aedf28cbaed428d:
+          fallback_metadata:
+            slot_definitions:
+              logo:
+                title: 'Site logo'
+              navigation:
+                title: 'Navigation menu'
+        9c54b0537f574888:
+          fallback_metadata:
+            slot_definitions:
+              logo:
+                title: 'Site logo'
+              navigation:
+                title: 'Navigation menu'
+              links:
+                title: CTAs
+        3149f199d66bbc29:
+          fallback_metadata:
+            slot_definitions:
+              logo:
+                title: 'Site logo'
+              navigation:
+                title: 'Navigation menu'
+              links:
+                title: CTAs
+      label: Navbar
+  -
+    name: canvas.component.sdc.forma_theme.section
+    data:
+      versioned_properties:
+        active:
+          fallback_metadata:
+            slot_definitions:
+              header_slot:
+                title: Header
+              main_slot:
+                title: Grid
+              footer_slot:
+                title: Footer
+        1c24bc07887c802e:
+          fallback_metadata:
+            slot_definitions:
+              header_slot:
+                title: Header
+              main_slot:
+                title: Grid
+              footer_slot:
+                title: Footer
+        14478983a3c56a13:
+          fallback_metadata:
+            slot_definitions:
+              header_slot:
+                title: Header
+              main_slot:
+                title: Grid
+              footer_slot:
+                title: Footer
+        7082127ba792625d:
+          fallback_metadata:
+            slot_definitions:
+              header_slot:
+                title: Header
+              main_slot:
+                title: Grid
+              footer_slot:
+                title: Footer
+        8968e2dc3a0fe183:
+          fallback_metadata:
+            slot_definitions:
+              header_slot:
+                title: Header
+              main_slot:
+                title: Grid
+              footer_slot:
+                title: Footer
+        1dd9bdedd17cf141:
+          fallback_metadata:
+            slot_definitions:
+              header_slot:
+                title: Header
+              main_slot:
+                title: Grid
+              footer_slot:
+                title: Footer
+        511d546ebeac2c88:
+          fallback_metadata:
+            slot_definitions:
+              header_slot:
+                title: Header
+              main_slot:
+                title: Grid
+              footer_slot:
+                title: Footer
+        41aebe616a5fb1b0:
+          fallback_metadata:
+            slot_definitions:
+              header_slot:
+                title: Header
+              main_slot:
+                title: Grid
+              footer_slot:
+                title: Footer
+        f59ebc3447e0e042:
+          fallback_metadata:
+            slot_definitions:
+              header_slot:
+                title: Header
+              main_slot:
+                title: Grid
+              footer_slot:
+                title: Footer
+        a917d5c9be8f2830:
+          fallback_metadata:
+            slot_definitions:
+              header_slot:
+                title: Header
+              main_slot:
+                title: Grid
+              footer_slot:
+                title: Footer
+      label: Section
+  -
+    name: canvas.component.sdc.forma_theme.text
+    data:
+      label: Text
+      versioned_properties:
+        active:
+          settings:
+            prop_field_definitions:
+              text:
+                default_value:
+                  -
+                    value: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique pretium pellentesque semper enim aliquam.</p>'
+  -
+    name: canvas.component.sdc.forma_theme.video
+    data:
+      label: Video
+  -
+    name: canvas.content_template.node.article.card
+    data:
+      component_tree:
+        '0:f68a8641-c72a-41f9-92d4-ebb3ba1943ac':
+          inputs:
+            link_label: 'Read article'
+  -
+    name: canvas.content_template.node.article.full
+    data:
+      component_tree:
+        '0:header_slot:0:main_slot:0:1e341afc-5dde-4754-acbb-2671c1b89ef2':
+          inputs:
+            heading_text: Article
+        '1:main_slot:0:group_slot:0:a609b091-13f0-4af7-867b-68c63410657c':
+          inputs:
+            heading_text: 'Tell us about your project'
+        '1:main_slot:0:group_slot:1:3668332b-d2a7-477b-9fbf-e904efadae99':
+          inputs:
+            heading_text: 'Every great space begins with a conversation, so reach out today to discuss your vision and see how we can work together.'
+        '1:main_slot:0:group_slot:2:b8abed88-82ff-4eae-be8e-0f1482b6abb0':
+          inputs:
+            label: 'Book a meeting'
+  -
+    name: canvas.content_template.node.project.card
+    data:
+      component_tree:
+        '0:hero_slot:0:group_slot:2:group_slot:0:37f22e70-9b9e-44ec-9b8a-4403842658dd':
+          inputs:
+            label: 'Project details'
+  -
+    name: canvas.content_template.node.project.full
+    data:
+      component_tree:
+        '0:footer_slot:0:main_slot:0:group_slot:0:f915d4db-a386-439c-936e-224eaab7dc8a':
+          inputs:
+            heading_text: 'Tell us about your project'
+        '0:footer_slot:0:main_slot:0:group_slot:1:49332124-cb01-4fc8-922f-fa8732d7f481':
+          inputs:
+            heading_text: 'Every great space begins with a conversation, so reach out today to discuss your vision and see how we can work together.'
+        '0:footer_slot:0:main_slot:0:group_slot:2:c120b522-4cf0-4d7e-a520-bbe15dafc273':
+          inputs:
+            label: 'Book a meeting'
+  -
+    name: canvas.pattern.5050heading
+    data:
+      label: '50/50 heading'
+      component_tree:
+        '0:main_slot:0:group_slot:0:02c06ddd-390d-48dc-a355-77924fe58aa6':
+          inputs:
+            heading_text: 'Spaces We Created'
+  -
+    name: canvas.pattern.contactcta
+    data:
+      label: 'Contact CTA'
+      component_tree:
+        '0:main_slot:0:group_slot:0:a609b091-13f0-4af7-867b-68c63410657c':
+          inputs:
+            heading_text: 'Tell us about your project'
+        '0:main_slot:0:group_slot:1:3668332b-d2a7-477b-9fbf-e904efadae99':
+          inputs:
+            heading_text: 'Every great space begins with a conversation, so reach out today to discuss your vision and see how we can work together.'
+        '0:main_slot:0:group_slot:2:b8abed88-82ff-4eae-be8e-0f1482b6abb0':
+          inputs:
+            label: 'Book a meeting'
+  -
+    name: canvas.pattern.principlesgrid
+    data:
+      label: 'Principles grid'
+      component_tree:
+        '0:group_slot:0:d78626ad-6f57-467b-9383-52dcf74475d2':
+          inputs:
+            heading_text: 'Our Values'
+        '0:group_slot:1:main_slot:0:48bb2305-f3b0-4f7d-8945-ccc86604d33f':
+          inputs:
+            heading_text: 'Architecture should look great, but it must work perfectly for the people who use it every day.'
+        '0:group_slot:2:main_slot:0:group_slot:1:b9b9be72-054e-4ecd-afab-6afce859fc4c':
+          inputs:
+            heading_text: Tenure
+        '0:group_slot:2:main_slot:1:group_slot:1:6108e29f-4fb0-4baf-9a5a-b9819bcc9e8a':
+          inputs:
+            heading_text: Impact
+        '0:group_slot:2:main_slot:2:group_slot:1:9ab3f190-9734-4701-b2c1-e59859aa9633':
+          inputs:
+            heading_text: Core
+        '0:group_slot:2:main_slot:3:group_slot:1:7935a090-b4c5-47a0-b92f-07506dafd05d':
+          inputs:
+            heading_text: Perspective
+  -
+    name: core.entity_form_display.node.article.default
+    data:
+      third_party_settings:
+        field_group:
+          group_seo:
+            label: 'Search Engine Optimization (SEO) Information'
+  -
+    name: core.entity_form_display.node.project.default
+    data:
+      third_party_settings:
+        field_group:
+          group_seo:
+            label: 'Search Engine Optimization (SEO) Information'
+          group_pullquote:
+            label: Pullquote
+  -
+    name: field.field.node.article.field_author
+    data:
+      label: Author
+  -
+    name: field.field.node.article.field_content
+    data:
+      label: Content
+      description: 'The content of this page.'
+  -
+    name: field.field.node.article.field_description
+    data:
+      label: Description
+      description: 'Describe the page content. This appears as the description in search engine results.'
+  -
+    name: field.field.node.article.field_featured_image
+    data:
+      label: 'Featured image'
+      description: 'Include an image. This appears as the image in search engine results.'
+  -
+    name: field.field.node.article.field_seo_analysis
+    data:
+      label: 'SEO analysis'
+      description: 'Pick the main keyword this page is about.'
+  -
+    name: field.field.node.article.field_seo_description
+    data:
+      label: 'SEO description'
+      description: 'Write a description for search engines and social media sites.'
+  -
+    name: field.field.node.article.field_seo_image
+    data:
+      label: 'SEO image'
+      description: 'Upload an image to be used when the page is shared on social media sites.'
+  -
+    name: field.field.node.article.field_seo_title
+    data:
+      label: 'SEO title'
+      description: 'Use this field to overwrite the default HTML page title for SEO.'
+  -
+    name: field.field.node.project.field_content
+    data:
+      label: Content
+      description: 'The content of this page.'
+  -
+    name: field.field.node.project.field_description
+    data:
+      label: Description
+      description: 'Describe the page content. This appears as the description in search engine results.'
+  -
+    name: field.field.node.project.field_eyebrow
+    data:
+      label: Brand
+  -
+    name: field.field.node.project.field_featured_image
+    data:
+      label: 'Featured image'
+      description: 'Include an image. This appears as the image in search engine results.'
+  -
+    name: field.field.node.project.field_location
+    data:
+      label: Location
+  -
+    name: field.field.node.project.field_name
+    data:
+      label: Name
+  -
+    name: field.field.node.project.field_position
+    data:
+      label: Position
+  -
+    name: field.field.node.project.field_quote_text
+    data:
+      label: 'Quote text'
+  -
+    name: field.field.node.project.field_seo_analysis
+    data:
+      label: 'SEO analysis'
+      description: 'Pick the main keyword this page is about.'
+  -
+    name: field.field.node.project.field_seo_description
+    data:
+      label: 'SEO description'
+      description: 'Write a description for search engines and social media sites.'
+  -
+    name: field.field.node.project.field_seo_image
+    data:
+      label: 'SEO image'
+      description: 'Upload an image to be used when the page is shared on social media sites.'
+  -
+    name: field.field.node.project.field_seo_title
+    data:
+      label: 'SEO title'
+      description: 'Use this field to overwrite the default HTML page title for SEO.'
+  -
+    name: node.type.article
+    data:
+      name: Article
+  -
+    name: node.type.project
+    data:
+      name: Project
+  -
+    name: system.menu.social
+    data:
+      label: 'Social links'
+  -
+    name: views.view.articles
+    data:
+      label: Articles
+      display:
+        default:
+          display_title: Default
+          display_options:
+            title: Articles
+            fields:
+              title:
+                separator: ', '
+            pager:
+              options:
+                tags:
+                  next: 'Next ›'
+                  previous: '‹ Previous'
+                  first: '« First'
+                  last: 'Last »'
+                expose:
+                  items_per_page_label: 'Items per page'
+                  items_per_page_options_all_label: '- All -'
+                  offset_label: Offset
+            exposed_form:
+              options:
+                submit_button: Apply
+                reset_button_label: Reset
+                exposed_sorts_label: 'Sort by'
+                sort_asc_label: Asc
+                sort_desc_label: Desc
+        articles_all:
+          display_title: Block
+        articles_latest:
+          display_title: Block
+          display_options:
+            title: 'Latest articles'
+  -
+    name: views.view.projects
+    data:
+      label: Projects
+      display:
+        default:
+          display_title: Default
+          display_options:
+            title: Projects
+            fields:
+              title:
+                separator: ', '
+            pager:
+              options:
+                tags:
+                  next: 'Next ›'
+                  previous: '‹ Previous'
+                  first: '« First'
+                  last: 'Last »'
+                expose:
+                  items_per_page_label: 'Items per page'
+                  items_per_page_options_all_label: '- All -'
+                  offset_label: Offset
+            exposed_form:
+              options:
+                submit_button: Apply
+                reset_button_label: Reset
+                exposed_sorts_label: 'Sort by'
+                sort_asc_label: Asc
+                sort_desc_label: Desc
+        projects_all:
+          display_title: Block
+        projects_latest:
+          display_title: Block
+          display_options:
+            title: 'Latest projects'

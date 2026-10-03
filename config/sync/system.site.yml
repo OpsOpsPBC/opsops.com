@@ -1,14 +1,14 @@
 _core:
-  default_config_hash: ijfbzDTN4CbE7Sr-6ubWzy_t1vH4OtU1doNCLssVz-4
+  default_config_hash: HlN7eAN2N4JIHsYv56V4E7sqC9bS609KwvGFjyD_mgk
 langcode: en
-uuid: f1bbce49-1e52-40e2-9ea6-70216454ae13
-name: 'Ops Ops'
-mail: opsopspbc@proton.me
-slogan: 'Public Benefit Corporation'
+uuid: 9a1b543d-2efe-44fb-9204-17bf74749d7a
+name: 'Ops Ops PBC'
+mail: christian@opsops.com
+slogan: ''
 page:
-  403: ''
-  404: ''
-  front: /node/1
+  403: /user/login
+  404: /page/2
+  front: /home
 admin_compact_mode: false
 weight_select_max: 100
 default_langcode: en

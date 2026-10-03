@@ -1,0 +1,31 @@
+uuid: d902c893-0be4-4066-b1ca-36759c4137a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.forma_theme.anchor
+    - canvas.component.sdc.forma_theme.badge
+    - canvas.component.sdc.forma_theme.blockquote
+    - canvas.component.sdc.forma_theme.button
+    - canvas.component.sdc.forma_theme.divider
+    - canvas.component.sdc.forma_theme.eyebrow
+    - canvas.component.sdc.forma_theme.heading
+    - canvas.component.sdc.forma_theme.icon
+    - canvas.component.sdc.forma_theme.image
+    - canvas.component.sdc.forma_theme.text
+    - canvas.component.sdc.forma_theme.video
+name: Base
+configEntityTypeId: component
+weight: 0
+items:
+  - sdc.forma_theme.anchor
+  - sdc.forma_theme.badge
+  - sdc.forma_theme.blockquote
+  - sdc.forma_theme.button
+  - sdc.forma_theme.divider
+  - sdc.forma_theme.eyebrow
+  - sdc.forma_theme.heading
+  - sdc.forma_theme.icon
+  - sdc.forma_theme.image
+  - sdc.forma_theme.text
+  - sdc.forma_theme.video

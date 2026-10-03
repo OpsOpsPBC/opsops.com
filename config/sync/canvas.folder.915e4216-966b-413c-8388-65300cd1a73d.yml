@@ -1,0 +1,17 @@
+uuid: 915e4216-966b-413c-8388-65300cd1a73d
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.forma_theme.cta
+    - canvas.component.sdc.forma_theme.hero-billboard
+    - canvas.component.sdc.forma_theme.hero-side-by-side
+    - canvas.component.sdc.forma_theme.image-split-section
+name: Hero
+configEntityTypeId: component
+weight: 0
+items:
+  - sdc.forma_theme.cta
+  - sdc.forma_theme.hero-billboard
+  - sdc.forma_theme.hero-side-by-side
+  - sdc.forma_theme.image-split-section

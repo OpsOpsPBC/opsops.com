@@ -1,0 +1,39 @@
+uuid: 41583cfa-31d6-42e6-ad83-b438dc1726c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.articles
+  module:
+    - views
+_core:
+  default_config_hash: kjiXNby95GI6mOW3_Q1SbfOrfTxGdJ29rOQWSwim43w
+active_version: de3bd62cabc51ea9
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: 'views_block:articles-articles_all'
+        label: Articles
+        label_display: '0'
+        provider: views
+        views_label: ''
+        items_per_page: null
+    fallback_metadata:
+      slot_definitions: null
+  f3f4ad1135439829:
+    settings:
+      default_settings:
+        id: 'views_block:articles-articles_all'
+        label: Articles
+        label_display: '0'
+        provider: views
+        views_label: ''
+        items_per_page: null
+    fallback_metadata:
+      slot_definitions: null
+label: Articles
+id: block.views_block.articles-articles_all
+provider: views
+source: block
+source_local_id: 'views_block:articles-articles_all'
