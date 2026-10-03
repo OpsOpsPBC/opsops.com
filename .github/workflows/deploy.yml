@@ -2,17 +2,18 @@ name: Deploy Drupal
 
 on:
   push:
-    branches: [main]
+    branches: [main, staging]
   workflow_dispatch:
 
 concurrency:
-  group: deploy-production
+  group: deploy-${{ github.event.repository.name }}-${{ github.ref_name }}
   cancel-in-progress: false
 
 env:
   PHP_VERSION: '8.4'
-  DEPLOY_PATH: /var/www
   KEEP_RELEASES: 5
+  TARGET_ENV: ${{ github.ref_name == 'main' && 'live' || 'staging' }}
+  DEPLOY_PATH: /var/www/${{ github.event.repository.name }}/${{ github.ref_name == 'main' && 'live' || 'staging' }}
 
 jobs:
   build:
@@ -65,10 +66,10 @@ jobs:
           retention-days: 7
 
   deploy:
-    name: Deploy to production
+    name: Deploy to ${{ github.ref_name == 'main' && 'live' || 'staging' }}
     needs: build
     runs-on: ubuntu-latest
-    environment: main
+    environment: ${{ github.ref_name == 'main' && 'live' || 'staging' }}
     steps:
       - name: Download artifact
         uses: actions/download-artifact@v4
@@ -138,9 +139,11 @@ jobs:
           exit 1
 
       - name: Copy bundle to server
+        env:
+          REMOTE_TARBALL: /tmp/deploy-${{ github.event.repository.name }}-${{ env.TARGET_ENV }}-${{ github.run_id }}.tar.gz
         run: |
           for i in 1 2 3; do
-            if scp /tmp/deploy.tar.gz deploy-target:/tmp/deploy.tar.gz; then
+            if scp /tmp/deploy.tar.gz "deploy-target:$REMOTE_TARBALL"; then
               exit 0
             fi
             echo "scp attempt $i failed, sleeping $((i * 5))s..."
@@ -154,24 +157,26 @@ jobs:
           DEPLOY_PATH: ${{ env.DEPLOY_PATH }}
           PHP_VERSION: ${{ env.PHP_VERSION }}
           KEEP_RELEASES: ${{ env.KEEP_RELEASES }}
+          REMOTE_TARBALL: /tmp/deploy-${{ github.event.repository.name }}-${{ env.TARGET_ENV }}-${{ github.run_id }}.tar.gz
         run: |
           ssh deploy-target \
             DEPLOY_PATH="$DEPLOY_PATH" \
             PHP_VERSION="$PHP_VERSION" \
             KEEP_RELEASES="$KEEP_RELEASES" \
+            REMOTE_TARBALL="$REMOTE_TARBALL" \
             'bash -se' << 'EOF'
             set -euo pipefail
-            trap 'rm -f /tmp/deploy.tar.gz' EXIT
+            trap 'rm -f "$REMOTE_TARBALL"' EXIT
 
             TIMESTAMP="$(date +%Y%m%d%H%M%S)"
             RELEASE="${DEPLOY_PATH}/releases/${TIMESTAMP}"
-            CURRENT="${DEPLOY_PATH}/drupal_current"
+            CURRENT="${DEPLOY_PATH}/current"
             SHARED="${DEPLOY_PATH}/shared"
             BACKUPS="${DEPLOY_PATH}/backups"
 
             mkdir -p "$RELEASE" "$SHARED/files" "$BACKUPS"
             echo "==> Extracting release: $RELEASE"
-            tar -xzf /tmp/deploy.tar.gz -C "$RELEASE"
+            tar -xzf "$REMOTE_TARBALL" -C "$RELEASE"
 
             echo "==> Linking shared resources"
             rm -rf "$RELEASE/web/sites/default/files"
