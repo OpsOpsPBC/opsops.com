@@ -14,5 +14,6 @@
     "drupal/core": "^10.3 || ^11",
     "drupal/easy_email": "^3.0.2",
     "drupal/easy_email_text_format": "^1.0.2"
-  }
+  },
+  "version": "1.0.2"
 }

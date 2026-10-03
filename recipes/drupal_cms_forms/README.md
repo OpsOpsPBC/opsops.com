@@ -1,13 +1,12 @@
 # Drupal CMS Forms
 
-Adds a simple contact form, and tools for building forms.
-
-## Recipes Applied
-- [Drupal CMS Anti-spam](https://www.drupal.org/project/drupal_cms_anti_spam)
+Adds a simple contact form, and tools for building forms, with protection against spam and abuse.
 
 ## Modules and Themes Installed
+- [ALTCHA](https://www.drupal.org/project/altcha)
 - [CAPTCHA](https://www.drupal.org/project/captcha)
 - Filter (core)
+- [Honeypot](https://www.drupal.org/project/honeypot)
 - Text Editor (core)
 - Views (core)
 - [Webform](https://www.drupal.org/project/webform)

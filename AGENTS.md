@@ -2,6 +2,8 @@
 
 This codebase is a Composer-managed Drupal site. Local development uses `ddev`.
 
+This file is meant to be copied into sites created from a site template. Site template authors should customize the "Template-specific notes" section below.
+
 ## Local environment (DDEV)
 
 Run commands from the project root:
@@ -26,6 +28,16 @@ DDEV project config lives in `.ddev/config.yaml`. Use `.ddev/config.local.yaml` 
 - Do not commit `vendor/` or uploaded files under `web/sites/*/files`.
 - Do not edit Drupal core or contributed projects in place.
 - Put custom code in `web/modules/custom` and `web/themes/custom`.
+
+## Template-specific notes
+
+### Content model
+
+### Editorial workflow and roles
+
+### Theme notes
+
+### Deployment notes
 
 ## References
 

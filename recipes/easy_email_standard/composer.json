@@ -16,5 +16,6 @@
     "drupal/easy_email_theme": "^1",
     "drupal/mailsystem": "^4",
     "drupal/symfony_mailer_lite": "^2.0.1"
-  }
+  },
+  "version": "1.0.3"
 }

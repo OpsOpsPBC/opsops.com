@@ -6,9 +6,9 @@ dependencies:
 third_party_settings:
   honeypot:
     honeypot: true
+weight: 0
 open: null
 close: null
-weight: 0
 uid: 1
 template: false
 archive: false
@@ -16,21 +16,7 @@ id: contact_form
 title: Contact
 description: '<p>A basic site-wide contact form for your website. Submissions are stored as well as emailed to the site administrator.</p>'
 categories: {  }
-elements: |-
-  name:
-    '#type': textfield
-    '#title': Name
-    '#required': true
-  email:
-    '#type': email
-    '#title': Email
-    '#required': true
-  message:
-    '#type': textarea
-    '#title': Message
-    '#required': true
-  captcha:
-    '#type': captcha
+elements: "name:\n  '#type': textfield\n  '#title': Name\n  '#required': true\nemail:\n  '#type': email\n  '#title': Email\n  '#required': true\nmessage:\n  '#type': textarea\n  '#title': Message\n  '#required': true\ncaptcha:\n  '#type': captcha"
 css: ''
 javascript: ''
 settings:
@@ -218,9 +204,9 @@ access:
 handlers:
   email:
     id: email
+    handler_id: email
     label: Email
     notes: ''
-    handler_id: email
     status: true
     conditions: {  }
     weight: 0

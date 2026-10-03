@@ -1,60 +1,57 @@
 {
-    "_comment": [
-        "How to customize this file:",
-        "- Change the 'name' field to your own package name. If you want to publish this site template on drupal.org, the package name MUST start with 'drupal/' and only contain letters, numbers, and underscores.",
-        "- Change the 'description' field to a brief description of your site template. It's common to repeat the description in recipe.yml.",
-        "- 'type' MUST be 'drupal-recipe, so leave that as-is.",
-        "- 'license' should generally be left as GPL-2.0-or-later unless you have a specific reason to change it. Which license you choose may affect your ability to publish the site template.",
-        "- Add any modules, themes, or recipes that your site template depends on to the 'require' section. This is automatically done by the Drush 'site:export' command.",
-        "- When this file looks right to you, delete this _comment section."
-    ],
     "name": "drupal/drupal_cms_site_template_base",
-    "description": "A blank template with the foundational features of Drupal CMS, for those who truly want to start from scratch.",
+    "description": "Provides the foundational features of Drupal CMS.",
     "type": "drupal-recipe",
     "license": "GPL-2.0-or-later",
     "require": {
-        "drupal/drupal_cms_admin_ui": "^2",
-        "drupal/drupal_cms_anti_spam": "^2",
-        "drupal/drupal_cms_authentication": "^2",
+        "drupal/automatic_updates": "^4.1",
+        "drupal/autosave_form": "^1.10",
+        "drupal/canvas": "^1.11",
+        "drupal/trash": "^3.0.13",
+        "drupal/coffee": "^2",
+        "drupal/core": "^11.4",
+        "drupal/dashboard": "^2.2",
         "drupal/drupal_cms_helper": "^2",
-        "drupal/drupal_cms_media": "^2",
-        "drupal/drupal_cms_privacy_basic": "^2",
-        "drupal/drupal_cms_seo_basic": "^2",
+        "drupal/drupical": "^1",
+        "drupal/easy_breadcrumb": "^2.0.9",
         "drupal/easy_email_express": "^1",
-        "drupal/site_template_helper": "^1.0.3"
-    },
-    "config": {
-        "allow-plugins": {
-            "drupal/site_template_helper": true
-        }
+        "drupal/eca": "^3.1.2",
+        "drupal/field_group": "^3.6 || ^4",
+        "drupal/focal_point": "^2.1",
+        "drupal/gin": "^5",
+        "drupal/gin_login": "^2.1.4",
+        "drupal/klaro": "^3",
+        "drupal/linkit": "^7",
+        "drupal/login_emailusername": "^3",
+        "drupal/media_file_delete": "^1",
+        "drupal/media_library_bulk_upload": "^1",
+        "drupal/menu_link_attributes": "^1.5",
+        "drupal/metatag": "^2",
+        "drupal/modeler": "^1",
+        "drupal/navigation_extra_tools": "^1.3",
+        "drupal/pathauto": "^1.13",
+        "drupal/project_browser": "^2.1.5",
+        "drupal/recipe_locale": "^1",
+        "drupal/redirect": "^1.10",
+        "drupal/sam": "^1.2",
+        "drupal/scheduler": "^2.2",
+        "drupal/scheduler_content_moderation_integration": "^3.0.4",
+        "drupal/seo_checklist": "^5.2.1",
+        "drupal/simple_sitemap": "^4.2.2",
+        "drupal/svg_image": "^3.1",
+        "drupal/tagify": "^1.2",
+        "drupal/token_or": "^2.2",
+        "drupal/view_password": "^6",
+        "drupal/yoast_seo": "^2.1"
     },
     "extra": {
         "drupal-scaffold": {
             "file-mapping": {
-                "[project-root]/AGENTS.md": "AGENTS.md"
-            }
-        },
-        "drupal-site-template": {
-            "_comment": [
-                "This section contains configuration used by drupal/site_template_helper to assist developers in creating site templates.",
-                "It will be automatically removed by `drush site:export`, but you should be sure to delete this section before publishing your site template."
-            ],
-            "generate-theme": {
-                "info": {
-                    "name": "Blank",
-                    "regions": {
-                        "header": "Header",
-                        "content": "Content",
-                        "footer": "Footer"
-                    },
-                    "libraries-override": {
-                        "core/normalize": false
-                    },
-                    "description": "A completely blank theme."
-                },
-                "from": false,
-                "name": "blank"
+                "[web-root]/robots.txt": {
+                    "append": "robots.append.txt"
+                }
             }
         }
-    }
+    },
+    "version": "2.2.1"
 }

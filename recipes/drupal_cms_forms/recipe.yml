@@ -1,12 +1,11 @@
 name: Forms
-type: Drupal CMS
-description: Adds a simple contact form, and tools for building forms.
-recipes:
-  - drupal_cms_anti_spam
+description: Adds a simple contact form, and tools for building forms, with protection against spam and abuse.
 install:
+  - altcha
   - captcha
   - editor
   - filter
+  - honeypot
   - views
   - webform
   - webform_ui
@@ -31,6 +30,21 @@ config:
       - filter.format.webform_default
       - views.view.webform_submissions
   actions:
+    captcha.settings:
+      simpleConfigUpdate:
+        default_challenge: altcha/ALTCHA
+    honeypot.settings:
+      simpleConfigUpdate:
+        # Protect the user registration form, password reset form, and comment form using
+        # Honeypot, since those are fairly likely to be exposed to anonymous users.
+        form_settings.comment_comment_form: true
+        form_settings.user_pass: true
+        form_settings.user_register_form: true
+    user.role.authenticated:
+      grantPermissions:
+        - 'bypass honeypot protection'
+        - 'skip CAPTCHA'
+        - 'use text format webform_default'
     webform.settings:
       simpleConfigUpdate:
         # Prevent unnecessary JS for <details> elements being added to all pages

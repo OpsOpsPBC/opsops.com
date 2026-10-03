@@ -4,8 +4,54 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "de8f85417a442e7a342e689965b45412",
+    "content-hash": "18e5a853c6fafe0ebda85bd26deb139f",
     "packages": [
+        {
+            "name": "altcha-org/altcha",
+            "version": "v1.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/altcha-org/altcha-lib-php.git",
+                "reference": "9a9b98c48dea0b2e8c353ea991d5f5627cbdab36"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/altcha-org/altcha-lib-php/zipball/9a9b98c48dea0b2e8c353ea991d5f5627cbdab36",
+                "reference": "9a9b98c48dea0b2e8c353ea991d5f5627cbdab36",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.72",
+                "phpstan/extension-installer": "^1.4",
+                "phpstan/phpstan": "^2.1",
+                "phpstan/phpstan-phpunit": "^2.0",
+                "phpunit/phpunit": "^11.5.50"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "AltchaOrg\\Altcha\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Regeci",
+                    "email": "536331+ovx@users.noreply.github.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/altcha-org/altcha-lib-php/issues",
+                "source": "https://github.com/altcha-org/altcha-lib-php/tree/v1.3.3"
+            },
+            "time": "2026-04-02T12:13:35+00:00"
+        },
         {
             "name": "asm89/stack-cors",
             "version": "v2.4.0",
@@ -2459,6 +2505,65 @@
             "homepage": "https://www.drupal.org/project/ai_validations",
             "support": {
                 "source": "https://git.drupalcode.org/project/ai_validations"
+            }
+        },
+        {
+            "name": "drupal/altcha",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/altcha.git",
+                "reference": "1.2.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/altcha-1.2.0.zip",
+                "reference": "1.2.0",
+                "shasum": "4eb18938e801024f2fd495a7c52b5d3562032372"
+            },
+            "require": {
+                "altcha-org/altcha": "^1.3.1",
+                "drupal/captcha": "^1.15 || ^2.0",
+                "drupal/core": "^10.2 || ^11",
+                "ext-openssl": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.2.0",
+                    "datestamp": "1784268242",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Filip Heymans",
+                    "homepage": "https://www.drupal.org/user/880584",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Jeremy Declerck",
+                    "homepage": "https://www.drupal.org/user/3659100",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Robin De Herdt",
+                    "homepage": "https://www.drupal.org/user/3555113",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Provides a free, open-source Captcha alternative utilizing a proof-of-work mechanism to safeguard your website against spam and unwanted content.",
+            "homepage": "https://drupal.org/project/altcha",
+            "support": {
+                "source": "https://git.drupalcode.org/project/altcha",
+                "issues": "https://drupal.org/project/issues/altcha"
             }
         },
         {
@@ -4926,6 +5031,61 @@
             }
         },
         {
+            "name": "drupal/forma_theme",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/forma_theme.git",
+                "reference": "1.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/forma_theme-1.0.0.zip",
+                "reference": "1.0.0",
+                "shasum": "05597cce9c32c6340fab355e37285a03fd550906"
+            },
+            "require": {
+                "drupal/core": "^11",
+                "drupal/cva": "^1"
+            },
+            "conflict": {
+                "drupal/experience_builder": "*"
+            },
+            "require-dev": {
+                "drupal/canvas": "^1"
+            },
+            "type": "drupal-theme",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0",
+                    "datestamp": "1781586057",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "pameeela",
+                    "homepage": "https://www.drupal.org/user/1431110"
+                },
+                {
+                    "name": "phenaproxima",
+                    "homepage": "https://www.drupal.org/user/205645"
+                }
+            ],
+            "description": "A scalable, modern Drupal CMS prototype theme, integrating cutting-edge front-end tools and a flexible, component-based design system.",
+            "homepage": "https://www.drupal.org/project/forma_theme",
+            "support": {
+                "source": "https://git.drupalcode.org/project/forma_theme"
+            }
+        },
+        {
             "name": "drupal/friendly_captcha_challenge",
             "version": "0.9.18",
             "source": {
@@ -6054,10 +6214,6 @@
                     "homepage": "https://www.drupal.org/user/291091"
                 },
                 {
-                    "name": "grevil",
-                    "homepage": "https://www.drupal.org/user/3668491"
-                },
-                {
                     "name": "hchonov",
                     "homepage": "https://www.drupal.org/user/2901211"
                 }
@@ -6280,6 +6436,61 @@
                 "source": "https://git.drupalcode.org/project/metatag",
                 "issues": "https://www.drupal.org/project/issues/metatag",
                 "docs": "https://www.drupal.org/docs/8/modules/metatag"
+            }
+        },
+        {
+            "name": "drupal/modeler",
+            "version": "1.0.9",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/modeler.git",
+                "reference": "1.0.9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/modeler-1.0.9.zip",
+                "reference": "1.0.9",
+                "shasum": "65bd165343bfaa05f9da0c1944e5bbc6c0f630dd"
+            },
+            "require": {
+                "drupal/core": "^11.3 || ^12.0",
+                "drupal/modeler_api": "^1.1.7",
+                "php": ">=8.3"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.9",
+                    "datestamp": "1789807472",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "boromino",
+                    "homepage": "https://www.drupal.org/user/859722"
+                },
+                {
+                    "name": "danielspeicher",
+                    "homepage": "https://www.drupal.org/user/3621778"
+                },
+                {
+                    "name": "jurgenhaas",
+                    "homepage": "https://www.drupal.org/user/168924"
+                }
+            ],
+            "description": "A modern, React Flow based modeler for Drupal that integrates into Modeler API and supports platforms like ECA, AI Agents, etc.",
+            "homepage": "https://www.drupal.org/project/modeler",
+            "support": {
+                "source": "https://drupal.org/project/modeler",
+                "issues": "https://drupal.org/project/issues/modeler"
             }
         },
         {
@@ -6997,7 +7208,7 @@
                     "homepage": "https://www.drupal.org/user/317279"
                 },
                 {
-                    "name": "misc",
+                    "name": "MiSc",
                     "homepage": "https://www.drupal.org/user/382892"
                 },
                 {
