@@ -60,6 +60,16 @@ Deployments run automatically via `.github/workflows/deploy.yml`:
    - Prunes old releases and DB backups (retaining the 5 most recent).
    - Runs optional health check against `HEALTH_URL`.
 
+### Branch Protection & Promotion Workflow
+
+To protect production from untested changes:
+
+- **Direct pushes to `main` are prevented** via GitHub branch protection rules.
+- **Production releases require a Pull Request** targeting `main` from `staging`.
+- **Enforced PR source**: `.github/workflows/verify-pr-source.yml` automatically validates that any PR targeting `main` originates from `staging`. Pull requests from any other branch will fail the status check and cannot be merged.
+
+---
+
 ### GitHub Secrets Required
 
 Configure these secrets in GitHub under **https://github.com/OpsOpsPBC/opsops.com > Settings > Secrets and variables > Actions**:
