@@ -1,0 +1,19 @@
+name: Verify PR Source
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened, edited]
+
+jobs:
+  check-source-branch:
+    name: Require PR from staging
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify source branch is staging
+        run: |
+          if [ "${{ github.head_ref }}" != "staging" ]; then
+            echo "::error::Pull requests targeting 'main' must originate from the 'staging' branch (got '${{ github.head_ref }}')."
+            exit 1
+          fi
+          echo "Verified: PR targeting 'main' originates from 'staging'."
