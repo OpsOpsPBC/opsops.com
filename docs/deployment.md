@@ -2,7 +2,7 @@
 
 This guide covers deployment workflows, Drupal configuration management, and database synchronization for **OpsOpsPBC/opsops.com**.
 
-Server-wide provisioning, Nginx snippets, and system administration are documented in the **OpsOpsPBC/drupal-multisite-server** repository.
+Server-wide provisioning, Nginx snippets, and system administration are documented in the [OpsOpsPBC/drupal-multisite-server](https://github.com/OpsOpsPBC/drupal-multisite-server) repository.
 
 ---
 

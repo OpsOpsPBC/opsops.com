@@ -1,36 +1,98 @@
-# Drupal CMS
+# opsops.com
 
-Drupal CMS is a fast-moving open source product that enables site builders to easily create new Drupal sites and extend them with smart defaults, all using their browser.
+This repository contains the Drupal CMS codebase for [opsops.com](https://opsops.com), managed by OpsOps PBC.
 
-## Getting started
+## Getting Started
 
-If you want to use [DDEV](https://ddev.com) to run Drupal CMS locally, follow these instructions:
+Local development uses [DDEV](https://ddev.com).
 
-1. Install DDEV following the [documentation](https://ddev.com/get-started/)
-2. Open the command line and `cd` to the root directory of this project
-3. Run `ddev launch`
+### Prerequisites
 
-Drupal CMS has the same system requirements as Drupal core, so you can use your preferred setup to run it locally. [See the Drupal User Guide for more information](https://www.drupal.org/docs/user_guide/en/installation-chapter.html) on how to set up Drupal.
+- [Docker](https://docs.docker.com/get-docker/)
+- [DDEV](https://ddev.com/get-started/) (v1.25.0+)
 
-### Installation options
+### Setup
 
-The Drupal CMS installer offers a list of features preconfigured with smart defaults. You will be able to customize whatever you choose, and add additional features, once you are logged in.
+1. Clone the repository and navigate into the project directory:
+   ```bash
+   git clone git@github.com:OpsOpsPBC/opsops.com.git
+   cd opsops.com
+   ```
 
-After the installer is complete, you will land on the dashboard.
+2. Start the DDEV environment:
+   ```bash
+   ddev start
+   ```
+   *(Dependencies are automatically installed via Composer post-start hooks).*
 
-## Documentation
+3. Launch the site in your browser:
+   ```bash
+   ddev launch
+   ```
 
-* [Drupal CMS User Guide](https://project.pages.drupalcode.org/drupal_cms/)
-* Learn more about managing a Drupal-based application in the [Drupal User Guide](https://www.drupal.org/docs/user_guide/en/index.html).
+4. Log in as an administrator:
+   ```bash
+   ddev drush uli
+   ```
 
-## Contributing & Support
+## Deployment & Environments
 
-[Report issues in the queue](https://drupal.org/node/add/project-issue/drupal_cms), providing as much detail as you can. You can also join the #drupal-cms-support channel in the [Drupal Slack community](https://www.drupal.org/slack).
+Full deployment procedures, environment details, CI/CD automation, and sync workflows are documented in **[docs/deployment.md](docs/deployment.md)**.
 
-Drupal CMS is developed in [a separate repository on Drupal.org](https://www.drupal.org/project/drupal_cms). See [CONTRIBUTING.md](CONTRIBUTING.md) for more information.
+Key topics covered in the deployment guide:
+- **Environments**: Live (`https://opsops.com`) and Staging (`https://staging.opsops.com`) running on DigitalOcean with atomic zero-downtime releases.
+- **CI/CD Pipeline**: Automated deployments via GitHub Actions (`.github/workflows/deploy.yml`) on pushes to `main` and `staging`.
+- **Configuration Management**: Exporting, reviewing, and committing Drupal configuration (`config/sync/`).
+- **Database & Asset Syncing**: Downloading and importing live database dumps and uploaded media into local DDEV environments.
+- **Rollback Procedures**: Immediate zero-downtime symlink rollbacks and database restores in case of issues.
 
-## License
+## Common Workflows
 
-Drupal CMS and all derivative works are licensed under the [GNU General Public License, version 2 or later](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html).
+Run all commands from the project root:
 
-Learn about the [Drupal trademark and logo policy here](https://www.drupal.com/trademark).
+- **Start / stop environment**:
+  ```bash
+  ddev start
+  ddev stop
+  ```
+- **Install PHP dependencies**:
+  ```bash
+  ddev composer install
+  ```
+- **Rebuild Drupal cache**:
+  ```bash
+  ddev drush cache:rebuild  # or: ddev drush cr
+  ```
+- **Run database updates**:
+  ```bash
+  ddev drush update:db -y
+  ```
+- **Configuration workflow**:
+  - Export configuration from local database to files:
+    ```bash
+    ddev drush config:export -y   # or: ddev drush cex -y
+    ```
+  - Import configuration from files to database:
+    ```bash
+    ddev drush config:import -y   # or: ddev drush cim -y
+    ```
+- **Add a module**:
+  ```bash
+  ddev composer require drupal/<module_name>
+  ddev drush pm:enable -y <module_name>
+  ddev drush cache:rebuild
+  ```
+
+## Project Structure & Guardrails
+
+- Custom code belongs in `web/modules/custom` and `web/themes/custom`.
+- Do not edit Drupal core or contributed modules/themes in place.
+- Do not commit machine-local overrides or secrets (`.env`, `settings.local.php`, `.ddev/config.local.yaml`).
+- Do not commit `vendor/` or uploaded user files under `web/sites/*/files`.
+
+## References
+
+- [Deployment Guide](docs/deployment.md)
+- [Drupal CMS Documentation](https://project.pages.drupalcode.org/drupal_cms/)
+- [DDEV Documentation](https://docs.ddev.com/)
+- [Drupal Configuration Management Guide](https://www.drupal.org/docs/administering-a-drupal-site/configuration-management/workflow-using-drush)
