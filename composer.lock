@@ -1905,17 +1905,17 @@
         },
         {
             "name": "drupal/ai_content_suggestions",
-            "version": "1.5.0",
+            "version": "1.5.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ai_content_suggestions.git",
-                "reference": "1.5.0"
+                "reference": "1.5.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ai_content_suggestions-1.5.0.zip",
-                "reference": "1.5.0",
-                "shasum": "edb60b1e8e4228a32539c5288b369f286eee1f9b"
+                "url": "https://ftp.drupal.org/files/projects/ai_content_suggestions-1.5.1.zip",
+                "reference": "1.5.1",
+                "shasum": "f7027db270a2185dde9c4374d72804d38126f107"
             },
             "require": {
                 "drupal/ai": "^1.4",
@@ -1925,8 +1925,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.5.0",
-                    "datestamp": "1783627222",
+                    "version": "1.5.1",
+                    "datestamp": "1790965412",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2143,17 +2143,17 @@
         },
         {
             "name": "drupal/ai_provider_amazeeio",
-            "version": "1.4.4",
+            "version": "1.4.5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ai_provider_amazeeio.git",
-                "reference": "1.4.4"
+                "reference": "1.4.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ai_provider_amazeeio-1.4.4.zip",
-                "reference": "1.4.4",
-                "shasum": "aa8e40ada87cafcc5f433c2875a3477afb9b56df"
+                "url": "https://ftp.drupal.org/files/projects/ai_provider_amazeeio-1.4.5.zip",
+                "reference": "1.4.5",
+                "shasum": "3d04c0e3b79710d21b549c996f33635d880916a3"
             },
             "require": {
                 "drupal/ai": "^1.3",
@@ -2169,8 +2169,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.4.4",
-                    "datestamp": "1790857666",
+                    "version": "1.4.5",
+                    "datestamp": "1790955249",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6214,6 +6214,10 @@
                     "homepage": "https://www.drupal.org/user/291091"
                 },
                 {
+                    "name": "grevil",
+                    "homepage": "https://www.drupal.org/user/3668491"
+                },
+                {
                     "name": "hchonov",
                     "homepage": "https://www.drupal.org/user/2901211"
                 }
@@ -7208,7 +7212,7 @@
                     "homepage": "https://www.drupal.org/user/317279"
                 },
                 {
-                    "name": "MiSc",
+                    "name": "misc",
                     "homepage": "https://www.drupal.org/user/382892"
                 },
                 {
@@ -15319,9 +15323,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "drupal/webform": 10
-    },
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {},
